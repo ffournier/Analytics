@@ -2,6 +2,7 @@ package com.android2ee.tutorial.analytics;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.Button;
 
@@ -56,6 +57,9 @@ public class FlurryActivity extends Activity implements View.OnClickListener {
     private void setUserData() {
         FlurryAgent.setAge(18);
         FlurryAgent.setGender((byte)0);
+        // get UDID of phone, for the tutorial
+        TelephonyManager manager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
+        FlurryAgent.setUserId(manager.getDeviceId());
     }
 
     @Override
