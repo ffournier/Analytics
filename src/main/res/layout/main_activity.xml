@@ -6,11 +6,19 @@
     <Button android:id="@+id/main_button_ga"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Google Analytics"/>
+            android:drawableLeft="@drawable/ga"
+            android:text="@string/ga"/>
 
     <Button android:id="@+id/main_button_countly"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Countly"/>
+        android:drawableLeft="@drawable/countly"
+        android:text="@string/countly"/>
+
+    <Button android:id="@+id/main_button_flurry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/flurry"
+        android:text="@string/flurry"/>
 
 </LinearLayout>

@@ -1,14 +1,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.android2ee.tutorial.analytics">
 
+    <!--required permission -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!--optional permission -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--optional permission -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
+    <!-- My Application -->
     <application android:allowBackup="true" android:label="@string/app_name"
         android:icon="@drawable/ic_launcher" android:theme="@style/AppTheme"
         android:name=".MyApplication"
         >
 
+        <!-- MainActivity Activity -->
         <activity android:name=".MainActivity"
                   android:label="@string/app_name"
                   android:screenOrientation="portrait">
@@ -17,13 +23,23 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <!-- Google Analytics Activity -->
         <activity android:name=".GoogleAnalyticsActivity"
                     android:label="@string/app_name"
                     android:screenOrientation="portrait"/>
+
+        <!-- Countly Activity -->
         <activity android:name=".CountlyActivity"
                         android:label="@string/app_name"
                         android:screenOrientation="portrait"/>
 
+        <!-- Flurry Activity -->
+        <activity android:name=".FlurryActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+
+        <!-- Service OPEN UDID for COuntly -->
         <service android:name="org.OpenUDID.OpenUDID_service">
             <intent-filter>
                 <action android:name="org.OpenUDID.GETUDID" />

@@ -11,13 +11,14 @@ import com.android2ee.tutorial.analytics.tool.TrackerName;
 
 /**
  * Created by florian on 27/01/15.
+ * Class Application
  */
 public class MyApplication extends Application {
 
     // The following line should be changed to include the correct property id.
     private static final String PROPERTY_ID = "UA-XXXXX-Y";
 
-
+    // Trackers Map
     HashMap<TrackerName, Tracker> mTrackers = new HashMap<TrackerName, Tracker>();
 
 
@@ -26,7 +27,13 @@ public class MyApplication extends Application {
         super.onCreate();
     }
 
+    /**
+     * Get Tracker for Google Analytics
+     * @param trackerId (APP_TRACKER, GLOBAL_TRACKER, COMMERCER_TRACKER
+     * @return
+     */
     synchronized Tracker getTracker(TrackerName trackerId) {
+        // get the right tracker in depends of tracker id
         if (!mTrackers.containsKey(trackerId)) {
 
             GoogleAnalytics analytics = GoogleAnalytics.getInstance(this);

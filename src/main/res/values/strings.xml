@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Analytics</string>
+
+    <string name="ga">Google Analytics</string>
+    <string name="countly">Countly</string>
+    <string name="flurry">Flurry</string>
 </resources>
